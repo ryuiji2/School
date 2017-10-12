@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Movement : MonoBehaviour {
-
-    public GameObject platform;
+    
     public int moveSpeed;
     public int rotateSpeed;
     public Camera mainCamera;
