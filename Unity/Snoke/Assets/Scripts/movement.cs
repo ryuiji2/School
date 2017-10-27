@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class movement : MonoBehaviour {
+public class Movement : MonoBehaviour {
 
-    Transform playerTrans;
+    public Transform playerTrans;
 
 	void Start () {
-        StartCoroutine (moving ());
+        StartCoroutine (Moving ());
         }
 	
 	void Update () {
@@ -18,21 +18,26 @@ public class movement : MonoBehaviour {
 
         if (Input.GetButtonDown ("w")) {
             transform.eulerAngles = new Vector3 (0, 0, 0);
-            }
+            playerTrans = this.transform;
+        }
         if (Input.GetButtonDown ("a")) {
             transform.eulerAngles = new Vector3 (0, -90, 0);
+            playerTrans = this.transform;
             }
         if (Input.GetButtonDown ("d")) {
             transform.eulerAngles = new Vector3 (0, 90, 0);
+            playerTrans = this.transform;
             }
         if (Input.GetButtonDown ("s")) {
             transform.eulerAngles = new Vector3 (0, -180, 0);
+            playerTrans = this.transform;
             }
-        }
+    }
 
-    IEnumerator moving() {
-        transform.position += transform.forward;
-        yield return new WaitForSeconds (0.3f);
-        StartCoroutine (moving ());
+    IEnumerator Moving() {
+        while (true) {
+            transform.position += transform.forward;
+            yield return new WaitForSeconds (0.3f);
+            }
         }
 }
