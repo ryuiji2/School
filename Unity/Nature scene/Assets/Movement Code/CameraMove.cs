@@ -4,27 +4,27 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour {
 
-    public float mouseH;
-    public float mouseV;
-    private float hor;
-    private float ver;
+    public GameObject cam;
+    private float mouseHor = -140;
+    private float mouseVer;
     public float moveSpeed;
 
-
-	
-	void Update () {
+    void Start () {
+    }
+    void Update () {
 
         MouseRot();
         Movement();
 	}
 
     void MouseRot() {
+        mouseVer += -Input.GetAxis ("Mouse Y");
+        mouseHor += Input.GetAxis ("Mouse X");
+        transform.eulerAngles = new Vector3 (0, mouseHor, 0);
+        cam.transform.eulerAngles = new Vector3(mouseVer, mouseHor, 0);
 
-        hor += mouseH * Input.GetAxis("Mouse X");
-        ver += -mouseV * Input.GetAxis("Mouse Y");
+        }
 
-        transform.eulerAngles = new Vector3(ver, hor, 0.0f);
-    }
     void Movement() {
         float forwardBack = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
         float leftRight = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;

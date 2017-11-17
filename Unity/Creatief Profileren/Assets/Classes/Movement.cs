@@ -57,8 +57,8 @@ public class Movement : MonoBehaviour {
         if (Input.GetMouseButton (2))
         {
             mouseVer += Input.GetAxis ("Mouse Y") * sensitivity;
-            mainCamera.transform.Translate (Vector3.up * mouseVer);
             mouseHor += -Input.GetAxis ("Mouse X") * sensitivity;
+            mainCamera.transform.Translate (Vector3.up * mouseVer);
             mainCamera.transform.Translate (Vector3.right * mouseHor);
             mainCamera.transform.LookAt (transform);
         }
