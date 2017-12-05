@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameStats : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public Text moneyText;
+    public float currMoney;
 	
-	// Update is called once per frame
 	void Update () {
-		
+        moneyText.text = "" + currMoney;
+
 	}
 }

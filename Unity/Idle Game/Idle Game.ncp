@@ -12,6 +12,8 @@
         <Collapsed>False</Collapsed>
         <Member type="Field">int costToBuy</Member>
         <Member type="Field">int moneyToGet</Member>
+        <Member type="Method">public void ButtonClick()</Member>
+        <Member type="Method">public void UpgradeClick()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -30,16 +32,12 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="0" second="1">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
       <Relationship type="Association" first="1" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <BendPoint relativeToStartShape="False">
