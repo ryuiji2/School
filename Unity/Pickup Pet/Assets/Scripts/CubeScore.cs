@@ -15,11 +15,6 @@ public class CubeScore : MonoBehaviour {
     public Text yellowText;
     public int purple;
     public Text purpleText;
-
-
-    void Start () {
-		
-	}
 	
 	void Update () {
 
